@@ -83,7 +83,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'FY20-ImaDemo (b8c7d821-4fbb-4089-8978-b966512a6a45)'
+        azureSubscription: 'AzureServiceConnection'
         appType: 'webApp'
         WebAppName: 'bnkYAML'
         packageForLinux: '$(System.ArtifactsDirectory)/**/OldDadApp.zip'
