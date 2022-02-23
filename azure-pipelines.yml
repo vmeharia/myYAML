@@ -69,8 +69,8 @@ stages:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'FY20-ImaDemo (b8c7d821-4fbb-4089-8978-b966512a6a45)'
-        subscriptionId: 'b8c7d821-4fbb-4089-8978-b966512a6a45'
+        azureResourceManagerConnection: 'AzureServiceConnection'
+        subscriptionId: 'bdfa51a9-1dda-4f0c-a3f7-3dfe7a48935a'
         action: 'Create Or Update Resource Group'
         resourceGroupName: 'lz-yaml'
         location: 'Central US'
