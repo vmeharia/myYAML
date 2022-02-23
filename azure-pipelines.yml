@@ -61,4 +61,4 @@ stages:
        azureSubscription: 'AzureServiceConnection'
        appType: 'webApp'
        WebAppName: 'testyaml8'
-       packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+       packageForLinux: '$(Build.ArtifactStagingDirectory)/**/OldDadApp.zip'
