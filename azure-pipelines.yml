@@ -85,5 +85,5 @@ stages:
         ConnectionType: 'AzureRM'
         azureSubscription: 'AzureServiceConnection'
         appType: 'webApp'
-        WebAppName: 'bnkYAML'
+        WebAppName: 'testyaml8'
         packageForLinux: '$(System.ArtifactsDirectory)/**/OldDadApp.zip'
