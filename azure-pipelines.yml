@@ -85,7 +85,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: '8AzureServiceConnection'
+        azureSubscription: 'AzureServiceConnection'
         appType: 'webApp'
         WebAppName: 'testyaml8'
         packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
