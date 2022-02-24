@@ -58,6 +58,8 @@ stages:
 - stage: TestDeployment
   jobs:
   - job: PublishTheCode
+    variables:
+    - group: myYAML-Demos
     steps:
     - task: DownloadBuildArtifacts@0
       inputs:
@@ -69,21 +71,21 @@ stages:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: '[REPLACE WITH YOUR AZURE SUBSCRIPTION]'
-        subscriptionId: '[REPLACE WITH YOUR AZURE SUBSCRIPTION]'
+        azureResourceManagerConnection: '$(AzSPN)'
+        subscriptionId: '$(AzSubID)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: 'lz-yaml'
         location: 'Central US'
         templateLocation: 'Linked artifact'
         csmFile: '$(System.ArtifactsDirectory)/**/WebAppWithSlots-Windows.json'
         csmParametersFile: '$(System.ArtifactsDirectory)/**/azuredeploy.parameters.json'
-        overrideParameters: '-appName bnkYAML'
+        overrideParameters: '-appName testyaml8'
         deploymentMode: 'Incremental'
 
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: '[REPLACE WITH YOUR AZURE SUBSCRIPTION]'
+        azureSubscription: '$(AzSPN)'
         appType: 'webApp'
-        WebAppName: 'bnkYAML'
+        WebAppName: 'testyaml8'
         packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
