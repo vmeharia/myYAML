@@ -71,7 +71,7 @@ stages:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: '$(AzSPN)'
+        azureResourceManagerConnection: 'AzureServiceConnection'
         subscriptionId: '$(AzSubID)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: 'lz-yaml'
@@ -85,7 +85,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: '$(AzSPN)'
+        azureSubscription: '8AzureServiceConnection'
         appType: 'webApp'
         WebAppName: 'testyaml8'
         packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
