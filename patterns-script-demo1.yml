@@ -22,7 +22,7 @@ steps:
     az --version
     az extension add -n azure-devops
     echo ${AZURE_DEVOPS_CLI_PAT} | az devops login
-    az devops configure --defaults organization=https://dev.azure.com/vmeharia.visualstudio.com project="DevOps-Patterns" --use-git-aliases true
+    az devops configure --defaults organization=https://dev.azure.com/vmeharia.visualstudio.com project="app_project" --use-git-aliases true
     az devops project list --output table
 
   displayName: 'Show list of projects'
